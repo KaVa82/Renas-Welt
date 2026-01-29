@@ -1,0 +1,171 @@
+/* Mystischer Hintergrund */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Crimson Text', serif;
+    background-color: #0d0a0f;
+    color: #e0d4c2;
+    overflow-x: hidden;
+}
+
+.background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    opacity: 0.15;
+    z-index: -1;
+}
+
+.main-container {
+    background-color: rgba(253, 246, 227, 0.9);
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    margin-bottom: 50px;
+}
+
+/* Ladeanimation */
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0d0a0f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader::after {
+    content: "";
+    width: 50px;
+    height: 50px;
+    border: 5px solid #d4af37;
+    border-top: 5px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Titel */
+h1 {
+    text-align: center;
+    font-family: 'Cinzel Decorative', cursive;
+    color: #d4af37;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+}
+
+.subtitle {
+    font-size: 1.5rem;
+    font-style: italic;
+    color: #e0d4c2;
+}
+
+/* Tempel-Blöcke */
+.tempel-block {
+    margin-bottom: 50px;
+    padding: 30px;
+    border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.tempel-block h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: #d4af37;
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px rgba(212, 175, 55, 0.5);
+}
+
+.tempel-block img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.text {
+    line-height: 1.8;
+    font-size: 1.15rem;
+    text-align: justify;
+}
+
+/* Nachwort */
+.nachwort {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid rgba(212, 175, 55, 0.3);
+    margin-top: 50px;
+}
+
+.nachwort h2 {
+    font-family: 'Cinzel Decorative', cursive;
+    color: #d4af37;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* Sound-Toggle */
+.sound-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.sound-toggle img {
+    width: 90px;
+    transition: transform 0.3s;
+}
+
+.sound-toggle img:hover {
+    transform: scale(1.05);
+}
+
+.sound-toggle p {
+    margin: 5px 0 0;
+    font-size: 0.9rem;
+    color: #d4af37;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .main-container {
+        padding: 15px;
+        max-width: 100%;
+    }
+    .tempel-block {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .tempel-block h2 {
+        font-size: 1.8rem;
+    }
+    .text {
+        font-size: 1rem;
+    }
+}
